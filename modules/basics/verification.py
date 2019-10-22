@@ -1,8 +1,24 @@
 # -*- coding: utf-8 -*-
-## module verification
+## module basics.verification
 
 
 import numpy as np
+
+
+########## INPUT  ##########
+## matA  -> Matrix [n*n]
+## matA1 -> Matrix [n*n]
+## matA2 -> Matrix [n*N]
+########## OUTPUT ##########
+## String -> ( matA = matA1 * matA2 ) is correct?
+def verifyMatrixMultiplication(matA,matA1,matA2):
+    
+    expectedAnswer = np.matmul(matA1,matA2)
+    wA,wB = np.asarray(matA), np.asarray(expectedAnswer)
+    
+    if( bool( np.asarray( abs(wA-wB) < 10**(-10) ).all() ) ):
+        return "All right"
+    return "Something is wrong"
 
 
 ########## INPUT  ##########
@@ -11,7 +27,7 @@ import numpy as np
 ## vecSol -> Vector [n]
 ########## OUTPUT ##########
 ## String -> ( matA * vecSol = vecB ) is correct?
-def verifySolution(matA,vecB,vecSol):
+def verifySystemSolution(matA,vecB,vecSol):
     
     expectedAnswer = np.matmul(matA,vecSol)
     wA,wB = np.asarray(expectedAnswer), np.asarray(vecB)

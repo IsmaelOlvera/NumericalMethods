@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-## module substitution
+## module basics.substitution
 
 
 import numpy as np
@@ -37,13 +37,13 @@ def forwardSubstitution(matL,vecB):
     
     matL = copy.deepcopy(matL)
     vecB = copy.deepcopy(vecB)
-    
+        
     n      = len(vecB)
     vecSol = np.zeros(n,dtype=float)
     
     for i in range(n):
-        vecSol[i] = ( vecB[i] - sum( [ matL[i,j]*vecSol[j] for j in range(i) ] ) )
-    
+        vecSol[i] = ( vecB[i] - sum( [ matL[i,j]*vecSol[j] for j in range(i) ] ) )  /  matL[i,i]
+        
     # Use to debug
     # print(vecSol)
     

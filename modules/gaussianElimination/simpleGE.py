@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
-## module gaussianElimination
+## module gaussianElimination.simple
 
+
+import sys
+from pathlib import Path
+
+if __name__ == "__main__":
+    parentPath  = Path().absolute().parent
+    sys.path.append( str(parentPath) )
 
 import numpy as np
 import copy
 
-import substitution
-import verification
+from basics import substitution,verification
 
 
 ########## INPUT  ##########
@@ -67,4 +73,4 @@ if __name__ == "__main__":
     print("Vector b: \n", vecB, "\n")
     print("Vector Solución: \n", vecSol, "\n")
     
-    print( verification.verifySolution(matA,vecB,vecSol) )
+    print( verification.verifySystemSolution(matA,vecB,vecSol) )
