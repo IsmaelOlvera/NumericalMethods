@@ -12,22 +12,28 @@ if __name__ == "__main__":
 import numpy as np
 
 from basics          import substitution,verification
-from decompositionLU import doolittle
+from decompositionLU import doolittle,cholesky
 
 
 ########## INPUT  ##########
 ## matA    -> Matrix [n*n]
 ########## OUTPUT ##########
 ## matAinv -> Matrix [n*n]  |  matA * matAinv = I
-def findInverse(matA):
+def findInverse(matA, method="doolittle"):
     
     n = len(matA)
     I = np.eye(n)
     
     matAinv = np.zeros((n,n),dtype=float)
     
-    matL,matU = doolittle.findLU(matA)
+    matL = np.array(0)
+    matU = np.array(0)
     
+    if( method == "doolittle" ):
+        matL,matU = doolittle.findLU(matA)
+    elif( method == "cholesky" ):
+        matL,matU = cholesky.findLU(matA)
+        
     for j in range(n):
         vecY         = substitution.forwardSubstitution(matL,I[:,j])
         matAinv[:,j] = substitution.backwardSubstitution(matU,vecY)
