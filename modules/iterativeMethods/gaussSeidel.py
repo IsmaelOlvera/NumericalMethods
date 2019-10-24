@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-## module iterativeMethods.jacobi
+## module iterativeMethods.gaussSeidel
 
 
 import sys
