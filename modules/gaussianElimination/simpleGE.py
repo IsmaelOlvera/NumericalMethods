@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-## module gaussianElimination.simple
+## module gaussianElimination.simpleGE
 
 
 import sys
