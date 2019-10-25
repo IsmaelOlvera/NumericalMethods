@@ -36,6 +36,7 @@ def solve(matA,vecB,vecX,threshold):
         vecXexceptList  = [ vecX[ indexesToUse[k] ] for k in range(n) ]
         matAexceptList  = [ matA[k,indexesToUse[k]] for k in range(n) ]
         dotProductsList = [ np.dot(matAexceptList[k],vecXexceptList[k]) for k in range(n) ]
+    
         vecX = np.array( [ (vecB[k]-dotProductsList[k]) / matA[k,k] for k in range(n) ] )
         
         estimationDiff = vecB - np.dot(matA,vecX)
