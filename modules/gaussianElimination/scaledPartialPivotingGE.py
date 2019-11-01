@@ -58,6 +58,8 @@ def elimination(matA,vecB):
             matA  [ [j,bestRowIndex] ] = matA  [ [bestRowIndex,j] ]
             vecB  [ [j,bestRowIndex] ] = vecB  [ [bestRowIndex,j] ]
             matLam[ [j,bestRowIndex] ] = matLam[ [bestRowIndex,j] ]
+            
+            permList[j],permList[bestRowIndex] = permList[bestRowIndex],permList[j]
         
         matLam[j,j] = 1.
         
