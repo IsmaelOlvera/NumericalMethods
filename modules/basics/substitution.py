@@ -74,4 +74,4 @@ if __name__ == "__main__":
     
     print("Matrix A: \n", matA, "\n")
     print("Vector b: \n", vecB, "\n")    
-    print("Vector Solución: \n", vecSol, "\n")
+    print("Vector Sol: \n", vecSol, "\n")
