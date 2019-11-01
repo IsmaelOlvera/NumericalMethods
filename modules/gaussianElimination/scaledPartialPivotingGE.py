@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-## module gaussianElimination.partialScaledPivotingGE
+## module gaussianElimination.scaledPartialPivotingGE
 
 
 import sys
